@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+">
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">            <!-- 扫描类嘛  这样才是完美，实际上底层还是先将sessionFactory注入，然后获取session,之后执行sql语句获取返回值 -->
+        <property name="basePackage" value="mapper"></property>   <!-- 这个感觉就代表了将sql语句执行后的结果放入mapper中，但必须在同一文件夹下！！！ -->
+    </bean>
+</beans>
