@@ -11,6 +11,12 @@
     <title>Title</title>
 </head>
 <body>
-
+<table width="400px" align="center">
+    <tr>
+        <td><a href="/selectStudent.do" target="next2">查询学生信息</a></td>
+        <td><a href="srmsg.jsp" target="next2">新增学生信息</a></td>
+    </tr>
+</table>
+<iframe style="width:90%; height:80%; margin-left: 20px" name="next2" id="next" allowtransparency="yes"></iframe>
 </body>
 </html>

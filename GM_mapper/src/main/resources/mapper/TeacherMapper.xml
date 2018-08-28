@@ -7,6 +7,12 @@
         DELETE FROM  gm_teacher WHERE teachername=#{username};
     </delete>
     <insert id="insertTeacher" parameterType="com.nsfocus.bean.User" useGeneratedKeys="true" keyProperty="id">
-        INSERT INTO gm_teacher teachername VALUE #{username};
+        INSERT INTO gm_teacher (teachername) VALUE (#{username});
     </insert>
+    <select id="queryTeacher" parameterType="int" resultType="com.nsfocus.bean.Teacher">
+        SELECT * FROM gm_teacher WHERE id=#{id}
+    </select>
+    <select id="queryTeacherByUser" parameterType="com.nsfocus.bean.User" resultType="com.nsfocus.bean.Teacher">
+        SELECT * FROM gm_teacher WHERE teachername=#{username}
+    </select>
 </mapper>

@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-        <!DOCTYPE mapper
-                PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-                "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mapper.StudentMapper">
     <delete id="deleteStudent" parameterType="com.nsfocus.bean.User">
-        DELETE form gm_student WHERE studentname=#{username};
+        DELETE FROM  gm_student WHERE studentname=#{username};
     </delete>
     <insert id="insertStudent" parameterType="com.nsfocus.bean.User" useGeneratedKeys="true" keyProperty="id">
-        INSERT INTO gm_student studentname VALUES #{username};
+        INSERT INTO gm_student (studentname) VALUES (#{username});
     </insert>
+    <update id="updateStudent" parameterType="com.nsfocus.bean.Student">
+        UPDATE gm_student SET note=#{note} WHERE studentname=#{studentname}
+    </update>
 </mapper>

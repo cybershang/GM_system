@@ -11,6 +11,9 @@
     <title>教师管理页面</title>
 </head>
 <body>
-
+<jsp:include page="../comp/head.jsp"></jsp:include>
+<jsp:include page="../comp/teacherbanner.jsp"></jsp:include>
+<iframe style="width:600px;height: 70%; margin: 20px 27%;" name="next" id="next" allowtransparency="yes"></iframe>
+<jsp:include page="../comp/flooer.jsp"></jsp:include>
 </body>
 </html>

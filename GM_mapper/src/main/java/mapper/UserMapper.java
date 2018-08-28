@@ -19,4 +19,9 @@ public interface UserMapper {
 
     //删除用户信息
     void deleteUser(User user);
+
+    //根据用户名查询用户信息
+    User querySinUser(String username);
+
+
 }

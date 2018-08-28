@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.GradeMapper">
+    <resultMap id="gradeResultMap" type="com.nsfocus.bean.Grade">
+        <id property="id" column="id" javaType="int" jdbcType="INTEGER" />
+        <result property="score" column="score" javaType="int" jdbcType="INTEGER"/>
+        <association property="student" javaType="com.nsfocus.bean.Student">
+            <id column="id" property="id"/>
+            <result column="studentname" property="studentname"/>
+            <result column="note" property="note"/>
+        </association>
+    </resultMap>
+
+    <select id="queryGrade" parameterType="com.nsfocus.bean.Student" resultType="com.nsfocus.bean.Grade">
+        SELECT * FROM gm_grade WHERE s_id=#{id}
+    </select>
+    <select id="queryGradeByTeacher" parameterType="com.nsfocus.bean.Teacher" resultMap="gradeResultMap">
+        select gg.id,gg.score,gs.id,gs.note,gs.studentname from gm_grade gg,gm_student gs,gm_teacher gt where gg.s_id=gs.id and gt.id=#{id}
+    </select>
+    <update id="updateGradeByGrade" parameterType="com.nsfocus.bean.Grade">
+        UPDATE gm_grade SET score=#{score} WHERE s_id=#{student.id} and t_id=#{teacher.id}
+    </update>
+</mapper>

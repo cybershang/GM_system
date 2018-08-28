@@ -11,9 +11,13 @@
     <title>Title</title>
 </head>
 <body>
+<div style="width: 1000px; height: 20px; margin: 0 auto">
+    <p style="float: right;"><a href="/logout.do">注销</a></p>
+</div>
 <br>
 <h2 align="center">绿盟科技应届生成绩管理系统</h2>
 <hr>
 <br><br>
+
 </body>
 </html>

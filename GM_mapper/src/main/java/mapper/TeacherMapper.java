@@ -7,4 +7,6 @@ public interface TeacherMapper {
    // public void updateTeacher( User teacher);
     public void deleteTeacher(User teacher);
     public void insertTeacher(User teacher);
+    public Teacher queryTeacher(Integer id);
+    public Teacher queryTeacherByUser(User user);
 }

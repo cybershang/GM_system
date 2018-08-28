@@ -8,4 +8,5 @@ public interface StudentMapper {
    // public void updateNote(Student student);
     public void deleteStudent(User student);
     public void insertStudent(User student);
+    public void updateStudent(Student student);
 }

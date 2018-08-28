@@ -15,7 +15,7 @@
     <tr>
         <td><a href="../manage/tmsg.jsp" target="next">老师信息管理</a></td>
         <td><a href="../manage/smsg.jsp" target="next">学生信息管理</a></td>
-        <td><a href="#">重置信息管理</a></td>
+        <td><a href="../manage/remsg.jsp" target="next">重置信息管理</a></td>
     </tr>
 </table>
 </body>

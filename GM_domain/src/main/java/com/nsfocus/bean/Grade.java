@@ -1,6 +1,6 @@
 package com.nsfocus.bean;
 
-public class Grade {
+public class Grade implements Comparable<Grade>{
     private Integer id;
     private Integer score;
     private Student student;
@@ -36,5 +36,9 @@ public class Grade {
 
     public void setTeacher(Teacher teacher) {
         this.teacher = teacher;
+    }
+
+    public int compareTo(Grade o) {
+        return this.getScore()-o.getScore();
     }
 }
